@@ -10,8 +10,8 @@ def create_app(app):
         @cross_origin()
         def get(self, url_id):
             if url_id=='port':
-                teste={'usuario': 'admin',
-                        'email': 'admin@localhost'}
+                teste={'Github': 'Ok!',
+                        'Heroku': 'Ok!'}
                 return teste
             else:
                 teste={'erro': 'nothing'}

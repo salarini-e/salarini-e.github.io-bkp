@@ -80,19 +80,21 @@ sobre.addEventListener("click", function(e){
     app_body.style.height='625px';
     app_body.style.width='100%';
 
+    
+    var jqxhr = $.getJSON( "https://salarini-e.herokuapp.com/api/port", function() {
+        document.getElementById('sobr').innerHTML="<div class='spinner m-auto'></div>"
+    })
+        .done(function(data) {
+            app_body.innerHTML=''
+            for(var k in data) {
+                app_body.innerHTML= app_body.innerHTML + k +": "+ data[k]+ "<br>";
+            }                
+        })
+        .fail(function() {
+            alert("server connection error");
+        })
+
 });
 
-    // var jqxhr = $.getJSON( "http://127.0.0.1:8000/api/port", function() {
-    //     app_body.innerHTML="Carregando dados..."
-    // })
-    //     .done(function(data) {
-    //         app_body.innerHTML=''
-    //         for(var k in data) {
-    //             app_body.innerHTML= app_body.innerHTML + k +": "+ data[k]+ "<br>";
-    //         }                
-    //     })
-    //     .fail(function() {
-    //         alert("server connection error");
-    //     })
 
 
