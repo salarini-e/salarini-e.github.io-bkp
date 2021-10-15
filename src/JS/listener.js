@@ -80,7 +80,6 @@ sobre.addEventListener("click", function(e){
     app_body.style.height='625px';
     app_body.style.width='100%';
 
-    
     var jqxhr = $.getJSON( "https://salarini-e.herokuapp.com/api/port", function() {
         document.getElementById('sobr').innerHTML="<div class='spinner m-auto'></div>"
     })
