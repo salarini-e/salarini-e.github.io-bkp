@@ -72,8 +72,7 @@ sobre.addEventListener("click", function(e){
     app.style.marginTop='2%';
     app.style.marginLeft='10%';
     
-    document.getElementById('sobr').style.display = "flex";  
-    closer='sobr'  
+    document.getElementById('sobr').style.display = "flex";      
     
     app.style.height='600px'; 
     app.style.width='85%'; 
@@ -84,15 +83,15 @@ sobre.addEventListener("click", function(e){
         document.getElementById('sobr').innerHTML="<div class='spinner m-auto'></div>"
     })
         .done(function(data) {
-            app_body.innerHTML=''
+            document.getElementById('sobr').innerHTML=''
             for(var k in data) {
-                app_body.innerHTML= app_body.innerHTML + k +": "+ data[k]+ "<br>";
+                document.getElementById('sobr').innerHTML= document.getElementById('sobr').innerHTML + k +": "+ data[k]+ "<br>";
             }                
         })
         .fail(function() {
             alert("server connection error");
         })
-
+    closer='sobr'  
 });
 
 
