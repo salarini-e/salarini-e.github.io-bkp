@@ -23,6 +23,7 @@ portfolio.addEventListener("click", function(e){
     app_body.style.height='575px';
     app_body.style.width='100%';
     document.getElementById('port').style.display = "flex";
+    document.getElementById('port').innerHTML="<div class='m-auto'><h4>Ops! Parece que não há nada aqui ainda...</h4><p>Estava página ainda está em desenvolvimento e hospedada no github para testes.</p></div>"
     closer='port'  
 });
 
@@ -40,7 +41,8 @@ aplicativos.addEventListener("click", function(e){
     app_body.style.height='600px';
     app_body.style.width='800px';
     app.style.marginTop='2%';
-    document.getElementById('apli').style.display = "flex";  
+    document.getElementById('apli').style.display = "flex"; 
+    document.getElementById('apli').innerHTML="<div class='m-auto'><h4>Ops! Parece que não há nada aqui ainda...</h4><p>Estava página ainda está em desenvolvimento e hospedada no github para testes.</p></div>" 
     closer='apli'  
 });
 
@@ -54,6 +56,7 @@ terminal.addEventListener("click", function(e){
     app.style.marginTop='4%';
     app.style.marginLeft='25%';
     document.getElementById('term').style.display = "flex";  
+    document.getElementById('term').innerHTML="<div class='m-auto'><h4>Ops! Parece que você é teimoso.</h4></div>"
     closer='term'  
 
     app.style.height='300px'; 
@@ -94,5 +97,16 @@ sobre.addEventListener("click", function(e){
     closer='sobr'  
 });
 
-
+var jqxhr = $.getJSON( "https://salarini-e.herokuapp.com/", function() {
+        document.getElementById('sobr').innerHTML="<div class='spinner m-auto'></div>"
+    })
+        .done(function(data) {
+            document.getElementById('sobr').innerHTML=''
+            for(var k in data) {
+                document.getElementById('sobr').innerHTML= document.getElementById('sobr').innerHTML + k +": "+ data[k]+ "<br>";
+            }                
+        })
+        .fail(function() {
+            alert("server connection error");
+})
 
