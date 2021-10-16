@@ -111,6 +111,11 @@ header #menu div a{
     font-size: 8pt;
 }
 #appbody #term .iterm{
+    font-size: 12pt;
+    height: 10pt;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: 'Courier New', Courier, monospace;
     box-shadow: none;
     border: 0;
     background-color: black;
