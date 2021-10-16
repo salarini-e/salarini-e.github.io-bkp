@@ -56,13 +56,21 @@ terminal.addEventListener("click", function(e){
     app.style.marginTop='4%';
     app.style.marginLeft='25%';
     document.getElementById('term').style.display = "flex";  
-    document.getElementById('term').innerHTML="<div class='m-auto'><h4>Ops! Parece que você é teimoso.</h4></div>"
+    // document.getElementById('term').innerHTML="<div class='m-auto'><h4>Ops! Parece que você é teimoso.</h4></div>"
     closer='term'  
 
     app.style.height='300px'; 
     app.style.width='500px'; 
     app_body.style.height='300px';
     app_body.style.width='500px';
+    document.getElementById('t1').focus();  
+    document.getElementById('term').addEventListener("keypress", function(e){
+        if(e.key === "Escape") {
+            app.style.display = "none";
+            document.getElementById(closer).style.display = "none";
+            closer=false
+        }
+      });
 });
 
 sobre=document.getElementById('sobre');
