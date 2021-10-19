@@ -36,6 +36,8 @@ function Sprite(img){
                 this.countAnim=0;
             }
             this.srcX = Math.floor(this.countAnim/5)*this.width;
+            console.clear()
+            console.log(this.posX+"/"+this.posY)
         }
     }
 }
