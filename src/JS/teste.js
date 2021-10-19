@@ -61,6 +61,7 @@ window.onload = function(){
     }
 
     function init(){
+        zezim.posX=zezim.posY=150;
         loop();
     }
     function update(){
