@@ -5,6 +5,7 @@ list_r=['r1','r2','r3','r4', 'r4']
 
 count_input=0
 loop=false
+
 $("#terminal-form").submit(function(){
     if(list_t[count_input]=='t5'){
        if(loop==false){
