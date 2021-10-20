@@ -66,7 +66,8 @@ terminal.addEventListener("click", function(e){
     app.style.marginTop='4%';
     app.style.marginLeft='25%';
     document.getElementById('term').style.display = "flex";  
-    // document.getElementById('term').innerHTML="<div class='m-auto'><h4>Ops! Parece que você é teimoso.</h4></div>"
+    document.getElementById('term').innerHTML="<p class='mt-2'>Eduardo.py [versão 10.0.000.2021]</p><p>(N) Nenhum direito reservado.</p><form id='terminal-form' action='' method='get'><input autocomplete='off' type='text' name=''' class='w-100 iterm' id='t1'><input autocomplete='off' type='text' name=''' class='w-100 iterm' id='r1' disabled><input autocomplete='off' type='text' name=''' class='w-100 iterm' id='t2' disabled><input autocomplete='off' type='text' name=''' class='w-100 iterm' id='r2' disabled><input autocomplete='off' type='text' name=''' class='w-100 iterm' id='t3' disabled><input autocomplete='off' type='text' name=''' class='w-100 iterm' id='r3' disabled><input autocomplete='off' type='text' name=''' class='w-100 iterm' id='t4' disabled><input autocomplete='off' type='text' name=''' class='w-100 iterm' id='r4' disabled><input autocomplete='off' type='text' name=''' class='w-100 iterm' id='t5' disabled><button type='submit'></button></form>"
+    
     closer='term'  
 
     app.style.height='300px'; 
