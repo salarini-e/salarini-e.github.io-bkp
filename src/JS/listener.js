@@ -5,6 +5,7 @@ closer=false
 document.getElementById('close').addEventListener("click", function(e){ 
     e.preventDefault();
     app.style.display = "none";
+    document.getElementById(closer).innerHTML=''
     document.getElementById(closer).style.display = "none";
     closer=false
 });
@@ -42,7 +43,16 @@ aplicativos.addEventListener("click", function(e){
     app_body.style.width='800px';
     app.style.marginTop='2%';
     document.getElementById('apli').style.display = "flex"; 
-    document.getElementById('apli').innerHTML="<div class='m-auto'><h4>Ops! Parece que não há nada aqui ainda...</h4><p>Estava página ainda está em desenvolvimento e hospedada no github para testes.</p></div>" 
+    document.getElementById('apli').innerHTML="<a id='litlegame' href='#'>Little Game</a>"
+    document.getElementById('litlegame').addEventListener("click", function(e){
+        document.getElementById('apli').innerHTML=''
+        var canvas = document.createElement('canvas');
+        canvas.width=800;
+        canvas.height=575;
+        document.getElementById('apli').appendChild(canvas)
+        game();
+    })
+    // document.getElementById('apli').innerHTML="<div class='m-auto'><h4>Ops! Parece que não há nada aqui ainda...</h4><p>Estava página ainda está em desenvolvimento e hospedada no github para testes.</p></div>" 
     closer='apli'  
 });
 
