@@ -1,0 +1,100 @@
+{% extends 'main-template.html' %}
+{% block css %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static', filename='css/plotador.css')}}">
+<script src="https://cdn.plot.ly/plotly-2.4.2.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+{% endblock %}
+{% block plotador %}active{% endblock %}
+{% block main %}
+<div id="plotador" class="row h-100 w-100 text-dark px-0">
+<div class="col p-2 d-flex">
+  <div class="my-4 w-100 p-5">
+    <div class="row w-100 mb-5 p-0">
+      <div class="col p-0 d-flex">
+        <div class="d-flex">
+          <img class="my-auto" style="height: 100px;" src="{{url_for('static', filename='imgs/logo_plotador.png')}}" alt="">
+          <h2 class="display-3 my-auto">Plotador</h2><span class="mt-auto">v1.2.1</span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h4 class="mb-4">Gráficos 2D</h4>
+      </div>
+    </div>
+    <div class="row px-3">
+      <div class="col-4">        
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+          <label class="form-check-label" for="exampleRadios1">
+            Linhas e Pontos
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+          <label class="form-check-label" for="exampleRadios2">
+            Regressão linear
+          </label>
+        </div>
+      </div>
+      <div class="col">     
+        <form class="d-flex" action="/plotador" method="post" enctype="multipart/form-data">
+          <div class="custom-file">
+            <input item id="myInput" type="file" name="file" class="custom-file-input" id="customFileLang" lang="pt">
+            <label class="custom-file-label" for="myInput" data-browse="Buscar">Selecionar Arquivo</label>            
+          </div>
+          <button class="btn ml-2"  type="submit">Processar dados</button>  
+          <button type="button" class="btn btn-dark ml-2" data-toggle="modal" data-target="#exampleModal">
+            PLOTAR!
+          </button>        
+        </form>
+        </div>      
+      </div>
+      <div class="row">
+        <div class="col pt-3">
+          {% if log[1]!='' %}
+          <div class="alert {{log[1]}}" role="alert">
+            {{log[0]}}            
+          </div>
+          {% endif%}          
+          <div class="row">
+            <div class="col pt-2 d-flex">
+              <img  src="{{url_for('static', filename='imgs/plot_layout.png')}}" alt="">
+              <i class="ml-4 my-auto fas fa-arrow-left"></i>               
+              <p class="ml-3 border my-auto">Layout do arquivo .txt, onde a primeira coluna temos as coordenadas X e na segunda as coordenadas Y.</p>              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal" style="background-color: rgba(240, 248, 255, 0);" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div style="width: 730px; margin-left: -100px;" class="bg-white modal-body d-flex">        
+          <div id="tester" class="m-auto"></div>        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<script>
+
+  document.querySelector('.custom-file-input').addEventListener('change',function(e){
+  var fileName = document.getElementById("myInput").files[0].name;
+  var nextSibling = e.target.nextElementSibling
+  nextSibling.innerText = fileName
+  })
+</script>
+<script>	
+  TESTER = document.getElementById('tester');
+    Plotly.newPlot( TESTER, [{
+    x: {{x}},
+    y: {{y}}}], {
+    margin: { t: 0 } } );</script>
+{% endblock %}

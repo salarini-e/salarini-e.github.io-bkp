@@ -99,7 +99,6 @@ header #menu div a{
 #appbody #port #github-repo{
     padding-top: 5px;
     height: 100%;
-    display: flex;
 }
 #appbody #port #github-repo .div-github-repo{
     padding: 10px;
