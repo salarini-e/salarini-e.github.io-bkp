@@ -24,7 +24,7 @@ portfolio.addEventListener("click", function(e){
     app_body.style.height='575px';
     app_body.style.width='100%';
     document.getElementById('port').style.display = "flex";
-    document.getElementById('port').innerHTML="<div class='m-auto'><h4>Ops! Parece que não há nada aqui ainda...</h4><p>Estava página ainda está em desenvolvimento e hospedada no github para testes.</p><p>Você pode ver algum trabalho meu no Sobre.</p></div>"
+    document.getElementById('port').innerHTML="<div class='m-auto'><h4>Ops! Parece que não há nada aqui ainda...</h4><p>Estava página ainda está em desenvolvimento e hospedada no github para testes.</p><!-- <p>Você pode ver algum trabalho meu no Sobre.</p>--></div>"
     closer='port'  
 });
 

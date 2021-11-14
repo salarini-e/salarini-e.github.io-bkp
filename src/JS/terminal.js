@@ -80,7 +80,7 @@ function fterminal(){
                 
             })
             .fail(function() {
-                alert("server connection error");
+                alert("Falha ao conectar ao servidor.");
             });   
         }
         
