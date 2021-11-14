@@ -85,7 +85,7 @@ aplicativos.addEventListener("click", function(e){
     })
     document.getElementById('plotador').addEventListener("click", function(e){
         e.preventDefault();
-        document.getElementById('apli').innerHTML="<iframe class='w-100 h-100' src='http://localhost:8000/plotador'></iframe>"
+        document.getElementById('apli').innerHTML="<iframe class='w-100 h-100' src='https://salarini-e.herokuapp.com/plotador'></iframe>"
 
     })
     // document.getElementById('apli').innerHTML="<div class='m-auto'><h4>Ops! Parece que não há nada aqui ainda...</h4><p>Estava página ainda está em desenvolvimento e hospedada no github para testes.</p></div>" 
