@@ -24,9 +24,34 @@ portfolio.addEventListener("click", function(e){
     app_body.style.height='575px';
     app_body.style.width='100%';
     document.getElementById('port').style.display = "flex";
-    document.getElementById('port').innerHTML="<div class='m-auto'><h4>Ops! Parece que não há nada aqui ainda...</h4><p>Estava página ainda está em desenvolvimento e hospedada no github para testes.</p><!-- <p>Você pode ver algum trabalho meu no Sobre.</p>--></div>"
-    closer='port'  
+    // document.getElementById('port').innerHTML="<div class='m-auto'><h4>Ops! Parece que não há nada aqui ainda...</h4><p>Estava página ainda está em desenvolvimento e hospedada no github para testes.</p><!-- <p>Você pode ver algum trabalho meu no Sobre.</p>--></div>"
+    gitUrl='https://api.github.com/users/salarini-e/repos'
+    var jqxhr = $.getJSON(gitUrl, function(){
+                console.log('Requisitando...')
+            })
+            .done(function(data) {
+                console.log(data);
+                div=document.createElement("div");
+                div.classList.add("d-flex");
+                div.classList.add("w-100");
+                div.id="github-repo";
+                document.getElementById('port').appendChild(div)
+                folders(data)
+            })
+            .fail(function() {
+                    console.log("Falha ao conectar ao servidor.");
+            }); 
+    folders=(data)=>{
+        data.forEach(element => {
+            document.getElementById('github-repo').innerHTML+="<div class='div-github-repo mx-auto d-flex flex-column text-center'><img class='folder-icon-git mx-auto' src='./src/imgs/icons/folder.png'><span>"+element.name.toString()+"</span></div>"
+
+        });
+    };
+    closer='port'; 
 });
+        
+    
+
 
 aplicativos=document.getElementById('aplicativos');
 aplicativos.addEventListener("click", function(e){ 

@@ -21,7 +21,7 @@ function fterminal(){
                 }
         }
         if (pass==true){
-            var jqxhr = $.getJSON( "http://localhost:8000/api/pw"+req, function() {
+            var jqxhr = $.getJSON( "https://salarini-e.herokuapp.com//api/pw"+req, function() {
                 
             })
             .done(function(data) {
@@ -53,7 +53,7 @@ function fterminal(){
                 alert("server connection error");
             });   
         }else{
-            var jqxhr = $.getJSON( "http://localhost:8000/api/"+req, function() {
+            var jqxhr = $.getJSON( "https://salarini-e.herokuapp.com//api/"+req, function() {
                 
             })
             .done(function(data) {

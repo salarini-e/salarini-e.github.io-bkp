@@ -96,6 +96,30 @@ header #menu div a{
 #appbody #port{
     display: none;
 }
+#appbody #port #github-repo{
+    padding-top: 20px;
+}
+#appbody #port #github-repo .div-github-repo{
+    padding: 10px;
+    width: 150px;
+    max-height: 150px;
+}
+
+#appbody #port #github-repo .div-github-repo:hover{
+    background-color: rgb(209, 203, 196);
+    border: 1px solid rgb(148, 144, 144);
+    cursor: pointer;
+}
+#appbody #port #github-repo .div-github-repo .folder-icon-git{
+    width: 50px;
+    height: 50px;
+    margin-top: 25px;
+}
+
+#appbody #port #github-repo .div-github-repo span{
+    font-weight: bold;
+    
+}
 #appbody #apli{
     display: none;
     /* background-image: url(../imgs/Screenshot_3.png); */
