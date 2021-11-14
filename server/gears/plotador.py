@@ -7,7 +7,7 @@ class Plotador:
         
     def __init__(self) -> None:
         self.ALLOWED_EXTENSIONS = {'txt', 'csv'}
-        self.UPLOAD_FOLDER = 'C:\\Users\\Eduardo\\Documents\\esalarini3\\app\\static\\uploads'  
+        self.UPLOAD_FOLDER = 'tmp'  
         pass    
     def allowed_file(self, filename):
         return '.' in filename and \

@@ -3,7 +3,7 @@ from .gears import Plotador
 
 def create_app():
     app = Flask(__name__)
-    UPLOAD_FOLDER = 'C:\\Users\\Eduardo\\Documents\\esalarini3\\app\\static\\uploads'    
+    UPLOAD_FOLDER = 'tmp'    
     app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER        
     
 
