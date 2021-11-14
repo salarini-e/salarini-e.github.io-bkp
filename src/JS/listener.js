@@ -27,7 +27,7 @@ portfolio.addEventListener("click", function(e){
     // document.getElementById('port').innerHTML="<div class='m-auto'><h4>Ops! Parece que não há nada aqui ainda...</h4><p>Estava página ainda está em desenvolvimento e hospedada no github para testes.</p><!-- <p>Você pode ver algum trabalho meu no Sobre.</p>--></div>"
     gitUrl='https://api.github.com/users/salarini-e/repos'
     var jqxhr = $.getJSON(gitUrl, function(){
-                console.log('Requisitando...')
+                // console.log('Requisitando...')
             })
             .done(function(data) {
                 console.log(data);
@@ -43,7 +43,7 @@ portfolio.addEventListener("click", function(e){
             }); 
     folders=(data)=>{
         data.forEach(element => {
-            document.getElementById('github-repo').innerHTML+="<div class='div-github-repo mx-auto d-flex flex-column text-center'><img class='folder-icon-git mx-auto' src='./src/imgs/icons/folder.png'><span>"+element.name.toString()+"</span></div>"
+            document.getElementById('github-repo').innerHTML+="<div class='div-github-repo mx-auto d-flex flex-column text-center'><a class='d-flex flex-column' target='_blank' href='https://github.com/salarini-e/"+element.name.toString()+"'><img class='folder-icon-git mx-auto' src='./src/imgs/icons/folder.png'><span>"+element.name.toString()+"</span></a></div>"
 
         });
     };
@@ -68,7 +68,7 @@ aplicativos.addEventListener("click", function(e){
     app_body.style.width='800px';
     app.style.marginTop='2%';
     document.getElementById('apli').style.display = "flex"; 
-    document.getElementById('apli').innerHTML="<a id='litlegame' href='#'>Little Game</a>"
+    document.getElementById('apli').innerHTML="<a id='litlegame' class='p-4' href='#'>Little Game.js</a>"
     document.getElementById('litlegame').addEventListener("click", function(e){
         document.getElementById('apli').innerHTML=''
         var canvas = document.createElement('canvas');
