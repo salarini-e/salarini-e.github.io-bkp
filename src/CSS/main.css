@@ -86,7 +86,7 @@ header #menu div a{
 }
 .spinner {
     border: 8px solid rgba(0, 0, 0, 0.1);
-    border-left-color: #22a6b3;
+    border-left-color: #3ab322;
     border-radius: 50%;
     width: 100px;
     height: 100px;
@@ -98,6 +98,8 @@ header #menu div a{
 }
 #appbody #apli{
     display: none;
+    /* background-image: url(../imgs/Screenshot_3.png); */
+    background-repeat: no-repeat;
 }
 #appbody #term{
     display: none;

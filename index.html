@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./src/eduardopy.ico" />
-    <title>Eduardo.py</title>
+    <link rel="shortcut icon" href="./src/logo.ico" />
+    <title>Salarini - Web Developer</title>
 
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -13,6 +13,26 @@
     <link rel="stylesheet" href="./src/CSS/main.css">
 </head>
 <body id="body-index" class="container-fluid d-flex">
+    <div id="welcome" style="display:flex; background-color: black;" class="fixed-top h-100 h-100 ">
+        
+        <div class="m-auto text-white">      
+            <script>                
+                msg='Olá! Seja bem vindo!';
+                index=0;                    
+                digitacao=()=>{
+                    document.getElementById('bemvindo').textContent+=msg[index]
+                    if (index==20){
+                        clearInterval(idInterval);                        
+                        document.getElementById('welcome').style.display='none';
+                    }
+                    index++
+                    }              
+
+                idInterval=setInterval(digitacao, 170)                
+            </script>
+            <h1 style="color: forestgreen;" id='bemvindo'></h1>
+        </div>
+    </div>
     <div id="app">
         <div class="cab">
             <span id="close" class="text-center">
@@ -49,8 +69,8 @@
                 <a href="#"><span>Terminal</span></a>
             </div>
             <div id="sobre" class="">                    
-                <a href="#"><img style="height: 45px; width: 45px;" src="./src/imgs/icons/tor.png" alt=""></a>
-                <a href="#" style="margin-top: 3px;"><span>Sobre</span></a>
+                <a href="/sobre"><img style="height: 45px; width: 45px;" src="./src/imgs/icons/tor.png" alt=""></a>
+                <a href="/sobre" style="margin-top: 3px;"><span>Sobre</span></a>
             </div>
         </div>
     </header>
