@@ -2,21 +2,27 @@ app=document.getElementById('app');
 app_body=document.getElementById('appbody');
 closer=false
 
-document.getElementById('close').addEventListener("click", function(e){ 
-    e.preventDefault();
+function closerWindow(){
     app.style.display = "none";
     document.getElementById(closer).innerHTML=''
     document.getElementById(closer).style.display = "none";
     closer=false
+}
+
+document.getElementById('close').addEventListener("click", function(e){ 
+    e.preventDefault();
+    closerWindow()
 });
 
 portfolio=document.getElementById('portfolio');
 portfolio.addEventListener("click", function(e){ 
     e.preventDefault();
-    app.style.display = "flex"; 
     if (closer!=false){
         document.getElementById(closer).style.display = "none";
     }
+    closer='port'; 
+    closerWindow();
+    app.style.display = "flex"; 
     app.style.marginTop='2%';
     app.style.marginLeft='35%';
     app.style.height='600px';
@@ -68,7 +74,7 @@ aplicativos.addEventListener("click", function(e){
     app_body.style.width='800px';
     app.style.marginTop='2%';
     document.getElementById('apli').style.display = "flex"; 
-    document.getElementById('apli').innerHTML="<a id='litlegame' class='p-4' href='#'>Little Game.js</a>"
+    document.getElementById('apli').innerHTML="<a id='litlegame' class='p-4' href='#'>Little Game.js</a><a id='plotador' class='p-4' href='#'>Plotador.py</a>"
     document.getElementById('litlegame').addEventListener("click", function(e){
         document.getElementById('apli').innerHTML=''
         var canvas = document.createElement('canvas');
@@ -76,6 +82,11 @@ aplicativos.addEventListener("click", function(e){
         canvas.height=575;
         document.getElementById('apli').appendChild(canvas)
         game();
+    })
+    document.getElementById('plotador').addEventListener("click", function(e){
+        e.preventDefault();
+        document.getElementById('apli').innerHTML="<iframe class='w-100 h-100' src='https://salarini-e.herokuapp.com/'></iframe>"
+
     })
     // document.getElementById('apli').innerHTML="<div class='m-auto'><h4>Ops! Parece que não há nada aqui ainda...</h4><p>Estava página ainda está em desenvolvimento e hospedada no github para testes.</p></div>" 
     closer='apli'  
